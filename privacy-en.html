@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#120a24" />
+    <title>Lumibugs: privacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      /* Английская страница конфиденциальности (5.10) — для всех языков, кроме русского; палитра как в игре, без аналитики */
+      :root {
+        --bg: #1d1036;
+        --panel: rgba(255, 255, 255, 0.05);
+        --text: #ffffff;
+        --muted: #c7b4e4;
+        --label: #ddd0f0;
+        --gold: #ffe07a;
+      }
+      html,
+      body {
+        margin: 0;
+        background: linear-gradient(#120a24, #1d1036 40%);
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: calc(24px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom));
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 900;
+        margin: 8px 0 4px;
+      }
+      h2 {
+        font-size: 19px;
+        font-weight: 900;
+        color: var(--gold);
+        margin: 28px 0 8px;
+      }
+      p,
+      li {
+        font-size: 16px;
+        color: var(--label);
+      }
+      ul {
+        padding-left: 20px;
+        margin: 8px 0;
+      }
+      li {
+        margin: 4px 0;
+      }
+      .updated {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 20px;
+      }
+      .card {
+        background: var(--panel);
+        border-radius: 20px;
+        padding: 4px 18px;
+      }
+      code {
+        font-family: inherit;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .back {
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+        padding: 16px;
+        border: 0;
+        border-radius: 28px;
+        background: #4a7dff;
+        color: #fff;
+        font: inherit;
+        font-size: 18px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy</h1>
+      <p class="updated">Updated October 5, 2026</p>
+
+      <div class="card">
+        <p>
+          Lumibugs is a free firefly puzzle game made by one developer. There is no sign-up: the game never asks for your name, email or
+          phone number. There are no ads and no real-money purchases yet.
+        </p>
+      </div>
+
+      <h2>What stays on your phone</h2>
+      <p>
+        Your progress, stars, settings and attempt log are kept in your browser's storage on your device. To erase them, remove
+        the app from your home screen or clear the site data in your browser.
+      </p>
+
+      <h2>What the game sends to the developer</h2>
+      <p>Anonymous gameplay stats. They show which levels are too hard, where players quit and what is unclear:</p>
+      <ul>
+        <li>a random player ID like <code>android-3f7a9c</code>, created by the game and not linked to your name or accounts;</li>
+        <li>device type, OS version, model (on Android), screen size, browser language, game version, and whether the game runs from the home screen;</li>
+        <li>
+          what happens in the game: sessions, the start and result of each attempt with its moves, time, stars, hints and other
+          boosters, in-game fireflies spent, panels and settings opened, and when the game goes to the background;
+        </li>
+        <li>a copy of your saved progress, so it can be restored if it gets lost;</li>
+        <li>technical errors in the game: the error text and the level where it happened, so they can be fixed.</li>
+      </ul>
+      <p>If you opened the game with a personal link that has a name in it (an address with <code>?t=</code>), that name is sent too.</p>
+
+      <h2>What is not collected</h2>
+      <p>
+        Your name (except the case above), email, phone number, contacts, photos and location. Your IP address is not stored and is
+        not used to find your city or country.
+      </p>
+
+      <h2>Where it is stored</h2>
+      <p>
+        In the PostHog analytics service, on servers in the European Union. Only the developer sees these stats and uses them only
+        to make the game better. They are never shared or sold.
+      </p>
+
+      <h2>How to delete your stats</h2>
+      <p>
+        A contact email will be added here in the next few days. Write to it and include your player ID: you can find it in the
+        game on the map, in Settings, at the bottom. Everything linked to that ID will be deleted.
+      </p>
+
+      <button class="back" type="button" onclick="goBack()">Back to the game</button>
+    </main>
+    <script>
+      // открыли из игры в новом окне: закрыть его; иначе назад или в игру
+      function goBack() {
+        if (window.opener) window.close();
+        else if (history.length > 1) history.back();
+        else location.href = './';
+      }
+    </script>
+  </body>
+</html>

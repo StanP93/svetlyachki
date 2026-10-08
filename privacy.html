@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#120a24" />
+    <title>Lumibugs: конфиденциальность</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      /* Страница конфиденциальности (5.10): та же палитра «Слива и янтарь», что в игре; без аналитики */
+      :root {
+        --bg: #1d1036;
+        --panel: rgba(255, 255, 255, 0.05);
+        --text: #ffffff;
+        --muted: #c7b4e4;
+        --label: #ddd0f0;
+        --gold: #ffe07a;
+      }
+      html,
+      body {
+        margin: 0;
+        background: linear-gradient(#120a24, #1d1036 40%);
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: calc(24px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom));
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 900;
+        margin: 8px 0 4px;
+      }
+      h2 {
+        font-size: 19px;
+        font-weight: 900;
+        color: var(--gold);
+        margin: 28px 0 8px;
+      }
+      p,
+      li {
+        font-size: 16px;
+        color: var(--label);
+      }
+      ul {
+        padding-left: 20px;
+        margin: 8px 0;
+      }
+      li {
+        margin: 4px 0;
+      }
+      .updated {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 20px;
+      }
+      .card {
+        background: var(--panel);
+        border-radius: 20px;
+        padding: 4px 18px;
+      }
+      code {
+        font-family: inherit;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .back {
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+        padding: 16px;
+        border: 0;
+        border-radius: 28px;
+        background: #4a7dff;
+        color: #fff;
+        font: inherit;
+        font-size: 18px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Конфиденциальность</h1>
+      <p class="updated">Обновлено 5 октября 2026</p>
+
+      <div class="card">
+        <p>
+          Lumibugs это бесплатная головоломка про светлячков, её делает один разработчик. Регистрации нет: игра не спрашивает ни имени, ни
+          почты, ни телефона. Рекламы и покупок за настоящие деньги пока нет.
+        </p>
+      </div>
+
+      <h2>Что хранится на твоём телефоне</h2>
+      <p>
+        Прогресс, звёзды, настройки и журнал попыток лежат в памяти браузера на твоём устройстве. Чтобы стереть их, удали
+        приложение с экрана «Домой» или очисти данные сайта в браузере.
+      </p>
+
+      <h2>Что игра отправляет разработчику</h2>
+      <p>Анонимную статистику игры. По ней видно, где уровни слишком трудные, где игроки бросают и что непонятно:</p>
+      <ul>
+        <li>случайный номер игрока вроде <code>android-3f7a9c</code>: его создаёт игра, и он не связан с твоим именем и аккаунтами;</li>
+        <li>тип устройства, версию системы, модель (на Android), размер экрана и язык браузера, версию игры, запущена ли она с экрана «Домой»;</li>
+        <li>
+          что происходит в игре: заходы, начало и итог каждой попытки с ходами, время, звёзды, подсказки и другие бустеры, траты
+          игровых светлячков, открытые панели и настройки, когда игра свёрнута;
+        </li>
+        <li>копию сохранения прогресса, чтобы вернуть его, если он пропадёт;</li>
+        <li>технические ошибки игры: текст ошибки и на каком уровне она случилась, чтобы их исправлять.</li>
+      </ul>
+      <p>
+        Если игра открыта по личной ссылке с именем (адрес с <code>?t=</code>), это имя тоже уходит со статистикой.
+      </p>
+
+      <h2>Что не собирается</h2>
+      <p>
+        Имя (кроме случая выше), почта, телефон, контакты, фото, местоположение. IP-адрес не сохраняется, и по нему не
+        определяются ни город, ни страна.
+      </p>
+
+      <h2>Где хранится</h2>
+      <p>
+        В сервисе аналитики PostHog, на серверах в Евросоюзе. Статистику видит только разработчик и использует только для того,
+        чтобы делать игру лучше. Никому не передаёт и не продаёт.
+      </p>
+
+      <h2>Как удалить свою статистику</h2>
+      <p>
+        Почта для связи появится здесь в ближайшие дни. Напиши на неё и укажи номер игрока: он виден в игре на карте, в
+        «Настройках», внизу. Всё, что связано с этим номером, будет удалено.
+      </p>
+
+      <button class="back" type="button" onclick="goBack()">Вернуться в игру</button>
+    </main>
+    <script>
+      // открыли из игры в новом окне: закрыть его; иначе назад или в игру
+      function goBack() {
+        if (window.opener) window.close();
+        else if (history.length > 1) history.back();
+        else location.href = './';
+      }
+    </script>
+  </body>
+</html>
